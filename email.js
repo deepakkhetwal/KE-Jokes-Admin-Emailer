@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 
 class Email{
-    sendEmail(options){
+    sendEmail(to){
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -13,7 +13,7 @@ class Email{
         });
         const mailOptions = {
             from: 'kidslaughs123@gmail.com', // sender address
-            to: options.to, // list of receivers comma separated
+            to: to, // list of receivers comma separated
             subject: 'New Jokes for you', // Subject line
             html: '<p>Dear Customer, New Jokes for you waiting at <a href="www.kidslaughs.com">kidslaughs.com</a></p>'// plain text body
         };
